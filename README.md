@@ -16,10 +16,9 @@ MAC address of the device (written on the bottom of the base station) and then
 issue the `arp -a` command from your terminal.
 
     var hue = require('hue-module');
-    
+
     hue.load({
-        "host"  : "IP Address", 
-        "key"   : "Username/Key",
+        "host"  : "IP Address",
         "port"  : 80
     });
 
@@ -43,29 +42,29 @@ corresponding usage example.
 If you do not already know the IP address of the base station you can search for it.
 
     hue.nupnpDiscover(callback)
-    
+
 ### Register a username
 
 To be able to send requests you need to register for a username. Do so by calling the following command after loading.
 
     hue.getUsername(callback)
-    
+
 An IP address is returned in the callback that can then be used to load the module.
 
 ### Get a list of lights
 
     hue.lights(callback)
-    
+
 In the callback a list of lights are returned. Each light can be set however one chooses.
-  
+
 ### Get a particular light
 
 	hue.light(lightID, callback)
-	
+
 ### Set settings of a particular light
 
 	light.set(attributes)
-	
+
 Usage example:
 
 	hue.light(1, function(light) {
@@ -75,7 +74,7 @@ Usage example:
 ### Render changes to bulb
 
 	hue.change(light)
-	
+
 Usage example:
 
 	hue.light(1, function(light) {
